@@ -12,7 +12,7 @@ function AddList({ onAdd }) {
   };
 
   return (
-    <div className="min-w-[270px]">
+    <div className="min-w-[270px] flex-shrink-0">
       {show ? (
         <div className="bg-gray-100 p-3 rounded-xl">
           <input
@@ -35,7 +35,7 @@ function AddList({ onAdd }) {
       ) : (
         <button
           onClick={() => setShow(true)}
-          className="bg-white/30 text-white p-3 rounded-xl min-w-[270px] text-left"
+          className="bg-white/30 text-white p-3 rounded-xl text-left w-[270px]"
         >
           + Add another list
         </button>

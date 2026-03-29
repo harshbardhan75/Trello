@@ -1,54 +1,38 @@
-import { useState } from "react";
 import List from "./List";
 import AddList from "./AddList";
 
-function Board() {
-  const [lists, setLists] = useState([
-    {
-      id: 1,
-      title: "Todo",
-      cards: [
-        { id: 1, title: "Sample Task 1" },
-        { id: 2, title: "Sample Task 2" }
-      ]
-    }
-  ]);
+const LIST_COLORS = [
+  "bg-red-200",
+  "bg-green-200",
+  "bg-blue-200",
+  "bg-yellow-200",
+  "bg-purple-200",
+  "bg-pink-200",
+];
 
-  const addCardToList = (listId, title) => {
-    setLists(prev =>
-      prev.map(list =>
-        list.id === listId
-          ? {
-              ...list,
-              cards: [...list.cards, { id: Date.now(), title }]
-            }
-          : list
-      )
-    );
-  };
-
-  const addList = (title) => {
-    setLists(prev => [
-      ...prev,
-      { id: Date.now(), title, cards: [] }
-    ]);
-  };
-
+function Board({ board, addList, addCard, search }) {
   return (
-    <div className="bg-gradient-to-r from-blue-400 to-blue-600 h-[calc(100vh-60px)] p-4 overflow-x-auto">
-      <div className="flex gap-4 items-start">
+    <div className="bg-gradient-to-r from-blue-400 to-purple-500 h-[calc(100vh-60px)] p-4 overflow-x-auto">
 
-        {lists.map((list) => (
+      <div className="flex gap-4 items-start flex-nowrap">
+
+        {board.lists.map(list => (
           <List
             key={list.id}
-            list={list}
-            addCardToList={addCardToList}
+            list={{
+              ...list,
+              cards: list.cards.filter(card =>
+                card.title.toLowerCase().includes(search.toLowerCase())
+              )
+            }}
+            addCard={addCard}
           />
         ))}
 
         <AddList onAdd={addList} />
 
       </div>
+
     </div>
   );
 }
