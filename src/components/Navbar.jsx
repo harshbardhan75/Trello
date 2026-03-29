@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaSearch, FaHome, FaBell, FaPlus, FaUserCircle } from "react-icons/fa";
+import { SiTrello } from "react-icons/si";
 
 function Navbar({ boards, setActiveBoardId, addBoard }) {
   const [showCreate, setShowCreate] = useState(false);
@@ -24,6 +25,7 @@ function Navbar({ boards, setActiveBoardId, addBoard }) {
 
       {/* Left Icons */}
       <div className="flex items-center gap-4">
+        <SiTrello className="text-white text-2xl cursor-pointer  hover:text-gray-300" />
         <FaHome className="text-white text-xl cursor-pointer hover:text-gray-300" />
       </div>
 

@@ -13,7 +13,10 @@ function App() {
           title: "Todo",
           cards: [
             { id: 1, title: "Sample Task 1" },
-            { id: 2, title: "Sample Task 2" }
+            { id: 2, title: "Sample Task 2" },
+             { id: 3, title: "Sample Task 3" },
+            { id: 4, title: "Sample Task 4" },
+
           ]
         }
       ]

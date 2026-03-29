@@ -79,7 +79,7 @@ import AddCard from "./AddCard";
 
 function List({ list, addCard }) {
   return (
-    <div className="bg-gray-100 p-3 rounded-xl min-w-[270px] flex-shrink-0 shadow-md">
+    <div className="bg-gray-100 p-3 rounded-xl min-w-[270] flex-shrink-0 shadow-md">
 
       <h2 className="font-semibold mb-2 text-gray-800">
         {list?.title || "No Title"}

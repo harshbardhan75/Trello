@@ -12,7 +12,7 @@ function AddList({ onAdd }) {
   };
 
   return (
-    <div className="min-w-[270px] flex-shrink-0">
+    <div className="min-w-[270] shrink-0">
       {show ? (
         <div className="bg-gray-100 p-3 rounded-xl">
           <input
